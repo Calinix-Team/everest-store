@@ -1,4 +1,21 @@
 {
-  "private": true,
-  "workspaces": "packages/*"
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "devDependencies": {
+        "turbo": "^1.0.26"
+    },
+    "scripts": {
+        "dev": "turbo run dev watch --parallel"
+    },
+    "turbo": {
+        "baseBranch": "origin/master",
+        "pipeline": {
+            "watch": {},
+            "dev": {
+                "cache": false
+            }
+        }
+    }
 }
